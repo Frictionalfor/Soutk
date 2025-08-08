@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soutk Online Compiler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Soutk Online Compiler</h1>
+    </div>
+
+    <div class="toolbar">
+        <button class="btn" onclick="runCode()">▶ Run</button>
+        <button class="btn secondary" onclick="clearEditor()">Clear</button>
+        <div class="examples-dropdown">
+            <button class="btn secondary">Examples ▼</button>
+            <div class="dropdown-content">
+                <a onclick="loadExample('hello')">Hello World</a>
+                <a onclick="loadExample('age')">Age Checker</a>
+                <a onclick="loadExample('loop')">Loop Demo</a>
+                <a onclick="loadExample('calculator')">Calculator</a>
+                <a onclick="loadExample('fibonacci')">Fibonacci</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="editor-panel">
+            <div class="editor-header">
+                main.stk
+            </div>
+            <div class="editor-container">
+                <div class="line-numbers" id="lineNumbers">1</div>
+                <textarea id="editor" placeholder="// Write your Soutk code here..."></textarea>
+            </div>
+        </div>
+
+        <div class="output-panel">
+            <div class="output-header">
+                <span class="output-title">Output</span>
+                <button class="clear-output" onclick="clearOutput()">✕ Clear</button>
+            </div>
+            <textarea id="output" readonly placeholder="Program output will appear here..."></textarea>
+        </div>
+    </div>
+
+    <div class="status-bar">
+        <span id="status">Ready</span>
+        <span>Soutk Language</span>
+    </div>
+
+    <div class="input-modal" id="inputModal">
+        <div class="modal-content">
+            <h3 id="promptText">Input Required</h3>
+            <input type="text" id="promptInput" placeholder="Enter value...">
+            <div class="modal-buttons">
+                <button class="btn secondary" onclick="cancelInput()">Cancel</button>
+                <button class="btn" onclick="submitInput()">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
